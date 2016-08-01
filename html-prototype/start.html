@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>Opendown</title>
+    <link href="style.css" rel="stylesheet">
+    <script type="application/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="application/javascript">google.load("jquery", "1.7");</script> 
+    <script type="text/javascript" src="jquery.cross-slide.js"></script> 
+</head>
+<body>
+    <header class="oHeader">
+        <div class="wrapperLong">
+            <span id="nadpis">
+                <img class="logo" src="logo.png">
+                <h1>OPENDOWN</h1>
+            </span>
+            <span id="share">f g+ t</span>
+        </div>
+    </header>
+    <section class="wrapperLong">
+        <div class="wrapperShort">
+            <article>
+                <h3>Výběr služby</h3>
+                <div class="services">
+                    <div class="ctverec" id="instagram">  
+                        <div id="placeholder"></div>
+                        <div class="odlesk"></div>
+                        <div class="detail">
+                            <span class="popis">Stáhněte si kterékoliv ze svých fotek na Instagramu pouhým kliknutím, či celou galerii v archivu zip, a to rychle a zdarma.</span>
+                            <span class="nazev">Instagram</span>
+                            <span class="prejit">..stačí kliknout..</span>
+                        </div> 
+                    </div>
+                    
+                    <div class="ctverec" id="rajce">
+                        <div class="odlesk"></div>
+                        <div class="detail">
+                            <span class="nazev">Rajče</span>
+                            <span class="popis">Stáhněte si své fotografie či celá alba rychle a přehledně ze služby Rajče.net.</span>
+                            <span class="prejit">Přejít na stahování</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ctverec" id="youtube">
+                        <div class="odlesk"></div>
+                        <div class="detail"> 
+                            <span class="nazev">Youtube</span>
+                            <span class="popis">Stahujte videa z YouTube v MP4 nebo jen jako písničku v MP3.</span>
+                            <span class="prejit disabled">Již brzy</span>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <h3>Co je to Opendown?</h3>
+                <p>Opendown je služba pro snadné a rychlé stažení vašich alb z populárních webových služeb (Instagram, Rajče.net, YouTube). Po výběru služby zadejte přezdívku nebo odkaz a vybraná alba fotek či videí se zabalí do jednoho zipu, který vám bude nabídnut ke stažení. V případě zamčenýh alb je nutné zadat přístupové údaje.</p>
+                <h3>Statistika</h3>
+                <p>Přehled využívání této služby připravujeme.</p>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
+<script>
+/*
+ $(document).ready(function () {  
+  var top = $('.topbar').offset().top - parseFloat($('.topbar').css('marginTop').replace(/auto/, 0));
+  $(window).scroll(function (event) {
+    // what the y position of the scroll is
+    var y = $(this).scrollTop();
+  
+    // whether that's below the form
+    if (y >= top) {
+      // if so, ad the fixed class
+      $('.topbar').addClass('fixed');
+    } else {
+      // otherwise remove it
+      $('.topbar').removeClass('fixed');
+    }
+  });
+});
+*/
+
+
+$('#placeholder').crossSlide({
+  fade: 1
+}, [
+  {
+    src:  '1.jpg',
+    from: '100% 80% 1x',
+    to:   '100% 60% 1.7x',
+    time: 6
+  }, {
+    src:  '2.jpg',
+    from: 'top left',
+    to:   'bottom right 1.5x',
+    time: 6
+  }, {
+    src:  '3.jpg',
+    from: '100% 80% 1.5x',
+    to:   '80% 50% 1.1x',
+    time: 6
+  }, {
+    src:  '4.jpg',
+    from: '100% 50%',
+    to:   '40% 50% 1.5x',
+    time: 6
+  }
+], function(idx, img, idxOut, imgOut) {
+  if (idxOut == undefined) {
+    // starting single image phase, put up caption
+    $('div.caption').text(img.alt).animate({opacity: .7})
+  } else {
+    // starting cross-fade phase, take out caption
+    $('div.caption').fadeOut()
+  }
+});
+    </script>
