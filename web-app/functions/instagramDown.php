@@ -14,6 +14,7 @@ if($_REQUEST['url'] && $_REQUEST['key']){
     if(is_dir($path.$key)){
         if(!is_dir($path.$key.$temp))mkdir($path.$key.$temp);
         foreach(explode($odd,$url) as $u){
+            $u = strtok($u, '?');
             file_put_contents($path.$key.$temp.strrchr($u, "/"),file_get_contents($u));
         }
     }else{
