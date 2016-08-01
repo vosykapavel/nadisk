@@ -27,18 +27,19 @@ foreach(pq($nav) as $odkaz) {
 //        echo $url.$href."<br>";
         array_push($zdroje,file_get_contents($url.$href));
     }
-    
+
 }
 
 //echo count($zdroje);
 foreach($zdroje as $z){
     $doc = phpQuery::newDocument($z);
-    
+
     foreach(pq($doc['.albumItem']) as $li){
         $l = pq($li);
         $albumId = pq($li)->attr('id');
         $albumName = pq($l['.albumName'])->text();
         $albumUrl = pq($l['.albumName'])->attr('href');
+        $albumUrl = (substr($albumUrl, 0, 2) == '//') ? "http:".$albumUrl : $albumUrl;
         $albumImg = pq($l['.photo .img img'])->attr('src');
         $albumCount = explode(" ", pq($l['.basic span:first'])->text());
         $albumCountImg = $albumCount[0];
@@ -50,23 +51,22 @@ foreach($zdroje as $z){
             $albumLocked = true;
         else
             $albumLocked = false;
-        
+
         //var_dump( explode(" ",pq($l['.basic span:first'])->text()));
-        
+
         array_push($json[$albums], array(   'id' => $albumId,
                                             'name' => $albumName,
                                             'url' => $albumUrl,
                                             'img' => $albumImg,
                                             'countImg' => $albumCountImg,
                                             'countVid' => $albumCountVid,
-                                            'locked' => $albumLocked 
+                                            'locked' => $albumLocked
                                         )
                     );
-        
+
         //echo $albumName;
         //echo "\n";
     }
 }
 echo json_encode($json);
 }
-
