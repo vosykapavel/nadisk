@@ -15,7 +15,7 @@ rajce.net a instagram.com a to v těchto případech:
 
 ## Technikálie
 NaDisk jsem se snažil napsat jako moderní webovou aplikaci, kde je frontend jako
-Single Page Appliaction a se serverem, který zastává téměř pouze úlohu jakéhosi
+Single Page Appliaction a se serverem, který zastává téměř výhradně úlohu jakéhosi
 API, komunikuje AJAXově. Nebo spíš AJAJově, abych byl korektní, protože formát dat
 je, jak už to dnes bývá, samozřejmě JSON. Jo a csska "čistě" bez preprocesorů,
 bůtsrapů, faundejšnů. Prostě mi bylo asi 16 let, když jsem to začal psát, a ty
