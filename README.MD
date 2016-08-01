@@ -5,13 +5,13 @@
 ## Co to je?
 
 NaDisk je webová aplikace (běžící na adrese www.nadisk.cz), která návštěvníkům
-umožňuje stáhnout si celá fotoalba (v plánu byly i videa) z různých služeb jako
+umožňuje stáhnout si celá fotoalba (v plánu byla i videa) z různých služeb jako
 jeden zazipovaný soubor. V současné době jsou podporovány pouze služby
 rajce.net a instagram.com a to v těchto případech:
 - veřejné album jakéhokoli uživatele na rajce.net
 - jakékoli skryté album na rajce.net, pokud znám odkaz
 - jakékoli zamčené album na rajce.net, pokud znám jméno a heslo k albu
-- uživatel na instagram.com má veřejný profil
+- fotky uživatele, který má na instagram.com veřejný profil
 
 ## Technikálie
 NaDisk jsem se snažil napsat jako moderní webovou aplikaci, kde je frontend jako
