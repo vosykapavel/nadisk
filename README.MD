@@ -1,5 +1,7 @@
 # NaDisk.cz
 
+![alt text](http://g.recordit.co/VaicIPFUyt.gif "Jak to funguje")
+
 ## Co to je?
 
 NaDisk je webová aplikace (běžící na adrese www.nadisk.cz), která návštěvníkům
